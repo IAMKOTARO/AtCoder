@@ -1,24 +1,12 @@
-import sys
+n = int(input())
 
+min_price = 10 ** 9
+for i in range(n):
+    time, price, stock = [int(s) for s in input().split()]
+    if (stock > time) and (min_price > price):
+        min_price = price
 
-N = int(input())
-A = []
-B = []
-
-for i in range(N):
-    a, b = input().split()
-    A.append(int(a))
-    B.append(int(b))
-
-min_time = 2 * 10 ** 5
-
-for i, a in enumerate(A):
-    for j, b in enumerate(B):
-        if i == j:
-            if a+b < min_time:
-                min_time = a+b
-        else:
-            if max(a, b) < min_time:
-                min_time = max(a, b)
-
-print(min_time)
+if min_price != 10 ** 9:
+    print(min_price)
+else:
+    print(-1)

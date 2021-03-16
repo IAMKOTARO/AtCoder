@@ -1,10 +1,6 @@
-A, B = [ int(s) for s in input().split() ]
+a, b = input().split()
+a, b = int(a), int(b)
 
-if A+B >= 15 and B >= 8:
-    print(1)
-elif A+B >= 10 and B >= 3:
-    print(2)
-elif A+B >= 3:
-    print(3)
-else:
-    print(4)
+dsicount = (a - b) / a * 100
+
+print(f'{dsicount}')
